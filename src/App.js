@@ -1,5 +1,6 @@
 import { Route, Routes, Navigate } from 'react-router-dom'
 import { Suspense } from 'react'
+
 import Home from 'containers/home'
 
 const App = () => (
