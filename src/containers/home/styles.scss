@@ -1,0 +1,23 @@
+.chart-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  .chart{
+    display: flex;
+    width: 50.25rem;
+    margin-top: 2rem;
+  }
+
+}
+@media screen and (max-width: 1070px) {
+  .chart-container {
+    flex-direction: column !important;
+  }
+}
+
+@media screen and (max-width: 796px) {
+  .chart-container {
+    float: left !important;
+  }
+}
