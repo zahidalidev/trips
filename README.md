@@ -62,6 +62,7 @@ If everything when fine, you should run
 - [eslint](https://eslint.org/) for better code quality.
 - [prettier](https://prettier.io/) for maintaining code quality in project.
 - [react-toastify](https://www.npmjs.com/package/react-toastify) for flash notifications.
+- [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2) for charts.
 
 
 ### CSS
