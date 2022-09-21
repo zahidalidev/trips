@@ -1,25 +1,25 @@
 import {
   Chart as ChartJS,
   CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
   Filler,
   Legend,
+  LinearScale,
+  LineElement,
+  PointElement,
+  Title,
+  Tooltip,
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
 
 ChartJS.register(
   CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
   Filler,
   Legend,
+  LinearScale,
+  LineElement,
+  PointElement,
+  Title,
+  Tooltip,
 )
 
 const VerticalChart = ({ details, label, options }) => {

@@ -8,7 +8,4 @@ export const getCurrentDate = (today) => {
   return `${yyyy}-${mm}-${dd} ${hh}:${min}:${sec}`
 }
 
-export const calculateAge = (birthYear) => {
-  const currentYear = new Date().getFullYear()
-  return currentYear - birthYear
-}
+export const calculateAge = (birthYear) => new Date().getFullYear() - birthYear

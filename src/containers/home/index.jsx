@@ -2,19 +2,17 @@ import {
   Accordion, AccordionSummary, AccordionDetails, Box, Typography,
 } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import { toast } from 'react-toastify'
 import { useEffect, useState } from 'react'
 
-import AppBar from 'components/AppBar'
+import { AppBar, LineChart, LoadingModal } from 'components'
 import chartDetails from 'utils/constants'
 import fetchTrips from 'api/trips'
 import handleBikesAtHours from 'utils/handleBikesAtHours'
 import handleRidersByAgeLocation from 'utils/handleRidersByAgeLocation'
 import handleAvgCoveredDistance from 'utils/handleAvgCoveredDistance'
-import LineChart from 'components/LineChart'
 
 import 'containers/home/styles.scss'
-import LoadingModal from 'components/LoadingModal'
-import { toast } from 'react-toastify'
 
 const Home = () => {
   const [charts, setCharts] = useState(chartDetails)
@@ -22,13 +20,8 @@ const Home = () => {
 
   const handleChange = (id) => {
     const tempCharts = [...charts]
-    tempCharts.map((item, index) => {
-      if (id === index) {
-        tempCharts[index].expanded = !item.expanded
-      } else {
-        tempCharts[index].expanded = false
-      }
-      return item.expanded === false
+    tempCharts.forEach((item, index) => {
+      tempCharts[index].expanded = id === index ? !item.expanded : false
     })
     setCharts(tempCharts)
   }

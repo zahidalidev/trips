@@ -25,7 +25,7 @@ You will need to use a Terminal. On OS X, you can find the default terminal in
 
 Please install [Homebrew](http://brew.sh/) if it's not already done with the following command.
 
-    $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+    $ ruby -e '$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)'
 
 If everything when fine, you should run
 

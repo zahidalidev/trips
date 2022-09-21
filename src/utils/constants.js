@@ -1,4 +1,4 @@
-const chartDetails = [
+export default [
   {
     expanded: true,
     question: 'How many bikes are rented at every hour of the day?',
@@ -63,5 +63,3 @@ const chartDetails = [
     },
   },
 ]
-
-export default chartDetails

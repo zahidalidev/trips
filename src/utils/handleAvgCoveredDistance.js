@@ -2,6 +2,7 @@ import { getDistance } from 'geolib'
 
 const handleAvgCoveredDistance = (data) => {
   const uniqueBikes = {}
+
   data.forEach((item) => {
     const distance = getDistance(
       { latitude: item['start station latitude'], longitude: item.start_station_longitude },

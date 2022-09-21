@@ -2,6 +2,7 @@ import { calculateAge } from 'utils/helpers'
 
 const handleRidersByAgeLocation = (data) => {
   const uniqueStationRiders = {}
+
   data.forEach((item) => {
     if (item['birth year'] !== null) {
       const birthYear = parseInt(item['birth year'], 10)
