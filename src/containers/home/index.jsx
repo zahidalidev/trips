@@ -5,6 +5,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { useEffect, useState } from 'react'
 
 import AppBar from 'components/AppBar'
+import chartDetails from 'utils/constants'
 import fetchTrips from 'api/trips'
 import handleBikesAtHours from 'utils/handleBikesAtHours'
 import handleRidersByAgeLocation from 'utils/handleRidersByAgeLocation'
@@ -14,26 +15,7 @@ import LineChart from 'components/LineChart'
 import 'containers/home/styles.scss'
 
 const Home = () => {
-  const [charts, setCharts] = useState([
-    {
-      expanded: true,
-      question: 'How many bikes are rented at every hour of the day?',
-      details: {},
-      label: 'Bikes rented at hour',
-    },
-    {
-      expanded: false,
-      question: 'The age distribution of riders for each starting location',
-      details: {},
-      label: 'Average age distribution',
-    },
-    {
-      expanded: false,
-      question: 'The average distance covered by each bike',
-      details: {},
-      label: 'Average covered distance',
-    },
-  ])
+  const [charts, setCharts] = useState(chartDetails)
 
   const handleChange = (id) => {
     const tempCharts = [...charts]
