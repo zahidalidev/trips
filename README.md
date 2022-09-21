@@ -63,7 +63,19 @@ If everything when fine, you should run
 - [prettier](https://prettier.io/) for maintaining code quality in project.
 - [react-toastify](https://www.npmjs.com/package/react-toastify) for flash notifications.
 - [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2) for charts.
+- [geolib](https://www.npmjs.com/package/geolib) for basic geospatial operations like distance calculation.
 
 
 ### CSS
 - [SCSS](https://sass-lang.com/) is used to write futureproof CSS in nested form.
+
+## Notes
+- Implemented 'How many bikes are rented at every hour of the day?'.
+- Implemented 'The age distribution of riders for each starting location'.
+- Implemented 'The average distance covered by each bike' with geolib.
+- Added ESLint for consistency and better code quality.
+- Added Basic Test Cases for components.
+
+## Future Work
+- We can add detailed test cases.
+- We can calculate the mileage of the five most ridden bikes'
