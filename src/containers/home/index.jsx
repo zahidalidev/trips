@@ -1,5 +1,5 @@
 import {
-  Accordion, AccordionSummary, AccordionDetails, Typography,
+  Accordion, AccordionSummary, AccordionDetails, Box, Typography,
 } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { useEffect, useState } from 'react'
@@ -13,9 +13,12 @@ import handleAvgCoveredDistance from 'utils/handleAvgCoveredDistance'
 import LineChart from 'components/LineChart'
 
 import 'containers/home/styles.scss'
+import LoadingModal from 'components/LoadingModal'
+import { toast } from 'react-toastify'
 
 const Home = () => {
   const [charts, setCharts] = useState(chartDetails)
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (id) => {
     const tempCharts = [...charts]
@@ -31,6 +34,7 @@ const Home = () => {
   }
 
   const handleTrips = async () => {
+    setLoading(true)
     try {
       const { data } = await fetchTrips()
       const tempCharts = [...charts]
@@ -39,8 +43,9 @@ const Home = () => {
       tempCharts[2].details = handleAvgCoveredDistance(data)
       setCharts(tempCharts)
     } catch (error) {
-      console.log('Fetching trips error! ', error)
+      toast.error('Fetching trips error!', error)
     }
+    setLoading(false)
   }
 
   useEffect(() => {
@@ -48,9 +53,9 @@ const Home = () => {
   }, [])
 
   return (
-    <div className='chart-container'>
+    <Box className='chart-container'>
       <AppBar />
-      <div className='chart'>
+      <Box className='chart'>
         {charts.map((chart, index) => (
           <Accordion
             key={chart.label}
@@ -61,12 +66,16 @@ const Home = () => {
               <Typography>{chart.question}</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <LineChart details={chart.details} label={chart.label} />
+              {!loading ? (
+                <LineChart details={chart.details} label={chart.label} />
+              ) : (
+                <LoadingModal show />
+              )}
             </AccordionDetails>
           </Accordion>
         ))}
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }
 
