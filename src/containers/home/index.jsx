@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 
 import { AppBar, LineChart } from 'components'
 import LoadingModal from 'components/LoadingModal'
-import chartDetails from 'utils/constants'
+import { chartDetails } from 'utils/constants'
 import fetchTrips from 'api/trips'
 import handleBikesAtHours from 'utils/handleBikesAtHours'
 import handleRidersByAgeLocation from 'utils/handleRidersByAgeLocation'
@@ -29,15 +29,15 @@ const Home = () => {
 
   const handleTrips = async () => {
     setLoading(true)
-    try {
-      const { data } = await fetchTrips()
+    const data = await fetchTrips()
+    if (data) {
       const tempCharts = [...charts]
       tempCharts[0].details = handleBikesAtHours(data)
       tempCharts[1].details = handleRidersByAgeLocation(data)
       tempCharts[2].details = handleAvgCoveredDistance(data)
       setCharts(tempCharts)
-    } catch (error) {
-      toast.error('Fetching trips error!', error)
+    } else {
+      toast.error('Fetching trips error!')
     }
     setLoading(false)
   }

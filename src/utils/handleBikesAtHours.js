@@ -1,12 +1,13 @@
 import { getCurrentDate } from 'utils/helpers'
+import { monthHours } from 'utils/constants'
 
 const handleBikesAtHours = (data) => {
-  const dateRange = [...Array(672).keys()]
+  const dateRange = [...Array(monthHours).keys()]
   let currentTime = new Date('2015-02-01 00:00:00')
   let currentTimeNextHour = currentTime
 
   const bikesEveryHours = [
-    ...Array(672).fill({
+    ...Array(monthHours).fill({
       start_time: '',
       count: 0,
     }),

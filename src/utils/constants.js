@@ -1,4 +1,6 @@
-export default [
+export const monthHours = 672
+
+export const chartDetails = [
   {
     expanded: true,
     question: 'How many bikes are rented at every hour of the day?',
