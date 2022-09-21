@@ -1,20 +1,17 @@
-import { useEffect, useState } from 'react'
-import Accordion from '@mui/material/Accordion'
-import AccordionDetails from '@mui/material/AccordionDetails'
-import AccordionSummary from '@mui/material/AccordionSummary'
-import Typography from '@mui/material/Typography'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-
 import {
-  handleAvgCoveredDistance,
-  handleBikesAtHours,
-  handleRidersByAgeLocation,
-} from 'utils/helpers'
+  Accordion, AccordionSummary, AccordionDetails, Typography,
+} from '@mui/material'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import { useEffect, useState } from 'react'
+
+import AppBar from 'components/AppBar'
 import fetchTrips from 'api/trips'
+import handleBikesAtHours from 'utils/handleBikesAtHours'
+import handleRidersByAgeLocation from 'utils/handleRidersByAgeLocation'
+import handleAvgCoveredDistance from 'utils/handleAvgCoveredDistance'
 import LineChart from 'components/LineChart'
 
 import 'containers/home/styles.scss'
-import AppBar from 'components/AppBar'
 
 const Home = () => {
   const [charts, setCharts] = useState([
