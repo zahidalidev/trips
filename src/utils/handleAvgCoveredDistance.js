@@ -15,8 +15,8 @@ const handleAvgCoveredDistance = (data) => {
 
   const keys = Object.keys(uniqueBikes)
   keys.forEach((key) => {
-    uniqueBikes[key].ridersAvgDistance = uniqueBikes[key].distances.reduce((a, b) => a + b, 0)
-    uniqueBikes[key].ridersAvgDistance /= uniqueBikes[key].distances.length
+    uniqueBikes[key].ridersAvgDistance = (uniqueBikes[key].distances.reduce((a, b) => a + b, 0)
+    / uniqueBikes[key].distances.length)
     uniqueBikes.allDistances = [
       ...(uniqueBikes?.allDistances || []),
       uniqueBikes[key].ridersAvgDistance,

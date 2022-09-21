@@ -16,8 +16,7 @@ const handleRidersByAgeLocation = (data) => {
     uniqueStationRiders[key].ridersAvgBirth = uniqueStationRiders[key].riders.reduce(
       (a, b) => a + b,
       0,
-    )
-    uniqueStationRiders[key].ridersAvgBirth /= uniqueStationRiders[key].riders.length
+    ) / uniqueStationRiders[key].riders.length
     uniqueStationRiders.ridersAvgAge = [
       ...(uniqueStationRiders.ridersAvgAge || []),
       calculateAge(uniqueStationRiders[key].ridersAvgBirth),

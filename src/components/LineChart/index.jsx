@@ -23,20 +23,7 @@ ChartJS.register(
   Legend,
 )
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'top',
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Line Chart',
-    },
-  },
-}
-
-const VerticalChart = ({ details, label }) => {
+const VerticalChart = ({ details, label, options }) => {
   const chartDetails = {
     labels: details?.labels,
     datasets: [

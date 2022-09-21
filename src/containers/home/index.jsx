@@ -67,7 +67,7 @@ const Home = () => {
             </AccordionSummary>
             <AccordionDetails>
               {!loading ? (
-                <LineChart details={chart.details} label={chart.label} />
+                <LineChart details={chart.details} label={chart.label} options={chart.options} />
               ) : (
                 <LoadingModal show />
               )}
