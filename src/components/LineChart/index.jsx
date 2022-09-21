@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -36,6 +35,7 @@ const VerticalChart = ({ details, label, options }) => {
       },
     ],
   }
+
   return <Line options={options} data={chartDetails} />
 }
 
