@@ -14,6 +14,7 @@ import fetchTrips from 'api/trips'
 import LineChart from 'components/LineChart'
 
 import 'containers/home/styles.scss'
+import AppBar from 'components/AppBar'
 
 const Home = () => {
   const [charts, setCharts] = useState([
@@ -69,6 +70,7 @@ const Home = () => {
 
   return (
     <div className='chart-container'>
+      <AppBar />
       <div className='chart'>
         {charts.map((chart, index) => (
           <Accordion
