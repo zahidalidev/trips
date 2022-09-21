@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 import { useEffect, useState } from 'react'
 
 import { AppBar, LineChart } from 'components'
-import LoadingModal from 'components/LoadingModal'
+import LoadingIndicator from 'components/LoadingIndicator'
 import { chartDetails } from 'utils/constants'
 import fetchTrips from 'api/trips'
 import handleBikesAtHours from 'utils/handleBikesAtHours'
@@ -63,7 +63,7 @@ const Home = () => {
               {!loading ? (
                 <LineChart details={chart.details} label={chart.label} options={chart.options} />
               ) : (
-                <LoadingModal show />
+                <LoadingIndicator show />
               )}
             </AccordionDetails>
           </Accordion>
