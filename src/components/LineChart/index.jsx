@@ -1,5 +1,5 @@
 import {
-  Chart as ChartJS,
+  Chart,
   CategoryScale,
   Filler,
   Legend,
@@ -11,7 +11,7 @@ import {
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
 
-ChartJS.register(
+Chart.register(
   CategoryScale,
   Filler,
   Legend,

@@ -14,10 +14,8 @@ const handleRidersByAgeLocation = (data) => {
 
   const keys = Object.keys(uniqueStationRiders)
   keys.forEach((key) => {
-    uniqueStationRiders[key].ridersAvgBirth = uniqueStationRiders[key].riders.reduce(
-      (a, b) => a + b,
-      0,
-    ) / uniqueStationRiders[key].riders.length
+    const birthSum = uniqueStationRiders[key].riders.reduce((prev, next) => prev + next, 0)
+    uniqueStationRiders[key].ridersAvgBirth = birthSum / uniqueStationRiders[key].riders.length
     uniqueStationRiders.ridersAvgAge = [
       ...(uniqueStationRiders.ridersAvgAge || []),
       calculateAge(uniqueStationRiders[key].ridersAvgBirth),
